@@ -49,7 +49,7 @@
 }
 
 :root {
-	--dhx-gantt-theme: terrace;
+	--dhx-gantt-theme: dark;
 	--dhx-gantt-font-family: Inter, Helvetica, Arial, sans-serif;
 	--dhx-gantt-font-size: 14px;
 	--dhx-gantt-heading-font-size: calc(var(--dhx-gantt-font-size) + 2px);
