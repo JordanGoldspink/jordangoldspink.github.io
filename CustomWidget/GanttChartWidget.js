@@ -1,7 +1,23 @@
 (function() {
         let tmpl = document.createElement('template');
         tmpl.innerHTML = `
-
+<style>
+#chart {
+border: 1px solid #000;
+padding: 10px;
+margin: 10px;
+width: 100%;
+max-width: 95%;
+height: 500px;
+overflow: hidden;
+box-sizing: border-box;
+}
+#image-container {
+width: 100%;
+height: 100px;
+background-position: center;
+}
+</style>
 <div id="image-container"> <svg width="750" height="100"> </svg></div>
 <div id="chart"></div>
 <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
