@@ -3,7 +3,7 @@
         tmpl.innerHTML = `
 <style>
 #chart {
-border: 1px solid #000;
+border: 10px solid #000;
 padding: 10px;
 margin: 10px;
 width: 100%;
