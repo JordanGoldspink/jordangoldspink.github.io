@@ -19,7 +19,7 @@
             // Load DHTMLX Gantt CSS
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
-            dhtmlxGanttCSS.href = 'https://jordangoldspink.github.io/GanttChartWigetStyle.css';
+            dhtmlxGanttCSS.href = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css';
             this._shadowRoot.appendChild(dhtmlxGanttCSS);
 
             // Load DHTMLX Gantt
