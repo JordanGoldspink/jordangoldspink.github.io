@@ -20,7 +20,7 @@
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
             dhtmlxGanttCSS.href = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css';
-            console,log('Style Called');
+            console.log('Style Called');
             this._shadowRoot.appendChild(dhtmlxGanttCSS);
 
             // Load DHTMLX Gantt
@@ -102,7 +102,6 @@ const endDate = new Date(row.dimensions_3.id);
             }
         }
 
-        console.log('Tasks:', this.tasks);  // Log the tasks
 
         this._renderChart();
     }
