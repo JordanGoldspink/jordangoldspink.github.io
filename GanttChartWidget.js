@@ -2,6 +2,8 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
 
+     <div id="image-container"> <svg width="750" height="100">  </svg></div> 
+    <div id="chart"></div>
 
     `;
 
