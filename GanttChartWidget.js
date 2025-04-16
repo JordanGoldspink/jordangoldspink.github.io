@@ -1,6 +1,6 @@
 (function() {
         let tmpl = document.createElement('template');
-        tmpl.innerHTML = `
+        tmpl.innerHTML = `<style></style>
 
 <div id="image-container"> <svg width="750" height="100"> </svg></div>
 <div id="chart"></div>
