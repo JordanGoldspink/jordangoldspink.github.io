@@ -10,7 +10,7 @@
     class GanttChartWidget extends HTMLElement {
         constructor() {
             super();
-
+            console.log('Constructor called');
             this._shadowRoot = this.attachShadow({mode: 'open'});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._props = {};
@@ -20,7 +20,7 @@
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
             dhtmlxGanttCSS.href = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css';
-            console.log('Style Called');
+                        console.log('Style Called')
             this._shadowRoot.appendChild(dhtmlxGanttCSS);
 
             // Load DHTMLX Gantt
@@ -40,6 +40,7 @@
 
         // GanttChart methods
         static get metadata() {
+            console.log('metadata called');
             return {
                 properties: {
                     myDataBinding: {
@@ -51,12 +52,12 @@
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
-
+            console.log('onCustomWidgetBeforeUpdate called');
             this._props = { ...this._props, ...changedProperties };
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-
+            console.log('onCustomWidgetAfterUpdate called');
             if ("myDataBinding" in changedProperties) {
                 const dataBinding = changedProperties.myDataBinding;
                 if (dataBinding.state === 'success') {
@@ -66,25 +67,31 @@
         }
 
 _updateData(dataBinding) {
+    console.log('_updateData called');
     if (dataBinding && Array.isArray(dataBinding.data)) {
         this.tasks = dataBinding.data.map((row, index) => {
             if (row.dimensions_0 && row.dimensions_1 && row.dimensions_2 && row.dimensions_3) {
   
                 
-
+                console.log('original startDate:', row.dimensions_2.id , 'endDate:', row.dimensions_3.id);  // Log the start and end dates
+             console.log('the rest measure:', row.measures_0.raw, 'the rest dim', row.dimensions_4.id );  // Log the start and end dates
                 
    const startDate = new Date(row.dimensions_2.id);
 const endDate = new Date(row.dimensions_3.id);
 
+                console.log('original startDate:', startDate, 'endDate:', endDate);  // Log the start and end dates
        
                 // Check if startDate and endDate are valid dates
                 if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+                    console.error('Invalid date:', row.dimensions_2.id, row.dimensions_3.id);
                     return null;
                 }
                 // Check if startDate is before endDate
                 if (startDate > endDate) {
+                    console.error('Start date is after end date:', startDate, endDate);
                     return null;
                 }
+                console.log('startDate:', startDate, 'endDate:', endDate);  // Log the start and end dates
                 return {
                     id: row.dimensions_0.label,  // Unique id of task
                     text: row.dimensions_1.label,  // Name of task
@@ -99,9 +106,11 @@ const endDate = new Date(row.dimensions_3.id);
         // Check if all tasks have valid start and end dates
         for (let task of this.tasks) {
             if (!task.start_date || !task.end_date) {
+                console.error('Task with null start or end date:', task);
             }
         }
 
+        console.log('Tasks:', this.tasks);  // Log the tasks
 
         this._renderChart();
     }
@@ -109,6 +118,7 @@ const endDate = new Date(row.dimensions_3.id);
 
 
 _renderChart() {
+    console.log('_renderChart called');
     if (this._dhtmlxGanttReady) {
         const chartElement = this._shadowRoot.getElementById('chart');
 
