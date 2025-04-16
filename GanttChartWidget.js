@@ -19,12 +19,12 @@
             // Load DHTMLX Gantt CSS
             const dhtmlxGanttCSS = document.createElement('link');
             dhtmlxGanttCSS.rel = 'stylesheet';
-            dhtmlxGanttCSS.href = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css';
+            dhtmlxGanttCSS.href = 'https://jordangoldspink.github.io/GanttChartWigetStyle.css';
             this._shadowRoot.appendChild(dhtmlxGanttCSS);
 
             // Load DHTMLX Gantt
             const dhtmlxGanttScript = document.createElement('script');
-            dhtmlxGanttScript.src = 'https://jordangoldspink.github.io/GanttChartWigetScript.js';
+            dhtmlxGanttScript.src = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js';
             dhtmlxGanttScript.onload = () => {
                 this._dhtmlxGanttReady = true;
                 this._renderChart();
