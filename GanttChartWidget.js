@@ -25,7 +25,7 @@
 
             // Load DHTMLX Gantt
             const dhtmlxGanttScript = document.createElement('script');
-            dhtmlxGanttScript.src = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js';
+            dhtmlxGanttScript.src = 'https://jordangoldspink.github.io/GanttChartWigetScript.js';
             dhtmlxGanttScript.onload = () => {
                 this._dhtmlxGanttReady = true;
                 this._renderChart();
