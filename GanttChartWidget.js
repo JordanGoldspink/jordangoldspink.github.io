@@ -40,12 +40,12 @@ background-position: center;
                 // Load DHTMLX Gantt CSS
                 const dhtmlxGanttCSS = document.createElement('link');
                 dhtmlxGanttCSS.rel = 'stylesheet';
-                dhtmlxGanttCSS.href = 'https://raw.githubusercontent.com/JordanGoldspink/jordangoldspink.github.io/refs/heads/main/CustomWidget/GanttChartWigetStyle.css';
+                dhtmlxGanttCSS.href = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.css';
                 this._shadowRoot.appendChild(dhtmlxGanttCSS);
 
                 // Load DHTMLX Gantt
                 const dhtmlxGanttScript = document.createElement('script');
-                dhtmlxGanttScript.src = 'https://raw.githubusercontent.com/JordanGoldspink/jordangoldspink.github.io/refs/heads/main/CustomWidget/GanttChartWigetScript.js';
+                dhtmlxGanttScript.src = 'https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js';
                 dhtmlxGanttScript.onload = () => {
                     this._dhtmlxGanttReady = true;
                     this._renderChart();
